@@ -6,13 +6,14 @@ _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
 
 # introduction
 * one to one correspondence between `X` and `Y`
-* bidirectional map between types `X` and `Y` is a bijection function `f: X -> Y`
+* bidirectional map between types `X` and `Y` is a bijection `f: X -> Y`
 * guava useful classes:
-    * ImmutableBiMap
-    * EnumBiMap
-    * BiMap
+    * `ImmutableBiMap`
+    * `EnumBiMap`
+    * `BiMap`
 
 # usage
+We will only cover **ImmutableBiMap** (in our opinion - most useful)
 1. to define `ImmutableBiMap` we have:
     * factory methods - up to 5 keys
         ```
