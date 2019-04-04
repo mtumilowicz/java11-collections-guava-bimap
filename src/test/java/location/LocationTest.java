@@ -16,15 +16,15 @@ public class LocationTest {
 
     @Test
     public void domain() {
-        assertThat(Optional.of(PL), is(Location.domain(POLAND)));
-        assertThat(Optional.of(DE), is(Location.domain(GERMANY)));
-        assertThat(Optional.of(JPN), is(Location.domain(JAPAN)));
+        assertThat(Optional.of(PL), is(Location.toDomainCountry(POLAND)));
+        assertThat(Optional.of(DE), is(Location.toDomainCountry(GERMANY)));
+        assertThat(Optional.of(JPN), is(Location.toDomainCountry(JAPAN)));
     }
 
     @Test
     public void external() {
-        assertThat(Optional.of(POLAND), is(Location.external(PL)));
-        assertThat(Optional.of(GERMANY), is(Location.external(DE)));
-        assertThat(Optional.of(JAPAN), is(Location.external(JPN)));
+        assertThat(Optional.of(POLAND), is(Location.toExternalCountry(PL)));
+        assertThat(Optional.of(GERMANY), is(Location.toExternalCountry(DE)));
+        assertThat(Optional.of(JAPAN), is(Location.toExternalCountry(JPN)));
     }
 }

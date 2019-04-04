@@ -17,11 +17,11 @@ class Location {
             JAPAN, JPN
     );
     
-    static Optional<Country> domain(external.Country countryExternal) {
+    static Optional<Country> toDomainCountry(external.Country countryExternal) {
         return Optional.ofNullable(COUNTRY_MAPPING.get(countryExternal));
     }    
     
-    static Optional<external.Country> external(Country countryInternal) {
+    static Optional<external.Country> toExternalCountry(Country countryInternal) {
         return Optional.ofNullable(COUNTRY_MAPPING.inverse().get(countryInternal));
     }
 }
