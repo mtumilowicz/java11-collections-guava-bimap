@@ -14,7 +14,7 @@ _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
     * `HashBiMap`
 
 # usage
-We will only cover **ImmutableBiMap** (in our opinion - most useful)
+We will cover only `ImmutableBiMap` (in our opinion - most useful)
 1. to define ImmutableBiMap we have:
     * factory methods - up to 5 keys
         ```
