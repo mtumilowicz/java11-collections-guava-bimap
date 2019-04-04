@@ -1,1 +1,115 @@
 # java11-collections-guava-bimap
+_Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/BiMap.html  
+_Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/ImmutableBiMap.html
+_Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
+
+# introduction
+* one to one correspondence between `X` and `Y`
+* bidirectional map between types `X` and `Y` is a bijection function `f: X -> Y`
+
+# usage
+1. to define `ImmutableBiMap` we have:
+    * factory methods - up to 5 keys
+        ```
+        static <K, V> ImmutableBiMap<K, V> of(K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5)
+        ```
+        ```
+        ImmutableBiMap<external.Country, Country> COUNTRY_MAPPING = ImmutableBiMap.of(
+                    POLAND, PL,
+                    GERMANY, DE,
+                    JAPAN, JPN
+        );
+        ```
+    * builder
+        ```
+        ImmutableBiMap<Capital, String> CAPITAL_MAPPING = ImmutableBiMap.<Capital, String>builder()
+                    .put(BUENOS_AIRES, "buenos-aires")
+                    .put(MEXICO_CITY, "mexico city")
+                    .put(WASHINGTON, "washington, dc")
+                    .build();
+        ```
+1. it can be used like ordinary map
+    ```
+    COUNTRY_MAPPING.get(...)
+    ```
+1. or we can "inverse" it
+    ```
+    COUNTRY_MAPPING.inverse().get(...)
+    ```
+
+# project description
+* in short: we want bijection between our domain objects and similar external objects
+    1. suppose we have incoming object with external (we cannot modify it) country
+        ```
+        public enum Country {
+            POLAND,
+            GERMANY,
+            JAPAN
+        }
+        ```
+    1. however in our domain, we have only abbreviations as a country
+        ```
+        enum Country {
+            PL,
+            DE,
+            JPN
+        }
+        ```
+    1. we want to set-up one to one correspondence between them
+        ```
+        class Location {
+            private final static ImmutableBiMap<external.Country, Country> COUNTRY_MAPPING = ImmutableBiMap.of(
+                    POLAND, PL,
+                    GERMANY, DE,
+                    JAPAN, JPN
+            );
+        
+            static Optional<Country> toDomainCountry(external.Country countryExternal) {
+                return Optional.ofNullable(COUNTRY_MAPPING.get(countryExternal));
+            }
+        
+            static Optional<external.Country> toExternalCountry(Country countryInternal) {
+                return Optional.ofNullable(COUNTRY_MAPPING.inverse().get(countryInternal));
+            }
+        }
+        ```
+* in short: we want to have one to one correspondence between incoming (ex. request) String and our domain enum
+    1. suppose that incoming request has different notation (ex. camelcase vs lowercase, "-" instead of "_", etc)
+    1. we want to establish one to one correspondence between incoming strings and our domain enum
+        ```
+        enum Capital {
+            BUENOS_AIRES,
+            MEXICO_CITY,
+            WASHINGTON
+        }
+        ```
+        ```
+        class Location {
+            private final static ImmutableBiMap<Capital, String> CAPITAL_MAPPING = ImmutableBiMap.<Capital, String>builder()
+                    .put(BUENOS_AIRES, "buenos-aires")
+                    .put(MEXICO_CITY, "mexico city")
+                    .put(WASHINGTON, "washington, dc")
+                    .build();
+        
+            static Optional<Capital> toDomainCapital(String capitalExternal) {
+                return Optional.ofNullable(CAPITAL_MAPPING.inverse().get(capitalExternal));
+            }
+        
+            static Optional<String> toExternalCapital(Capital capital) {
+                return Optional.ofNullable(CAPITAL_MAPPING.get(capital));
+            }
+        }
+        ```
+* tests
+    * 
+        ```
+        ```
+    * 
+        ```
+        ```
+    * 
+        ```
+        ```
+    * 
+        ```
+        ```
