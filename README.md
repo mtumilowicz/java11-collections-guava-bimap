@@ -15,7 +15,7 @@ _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
 
 # usage
 We will cover only `ImmutableBiMap` (in our opinion - most useful)
-1. to define ImmutableBiMap we have:
+1. to define `ImmutableBiMap` we have:
     * factory methods - up to 5 keys
         ```
         static <K, V> ImmutableBiMap<K, V> of(K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5)
@@ -39,7 +39,7 @@ We will cover only `ImmutableBiMap` (in our opinion - most useful)
     ```
     COUNTRY_MAPPING.get(...)
     ```
-1. or we can "inverse" it in `O(1)` - it is cached in field
+1. or we can "inverse" it in `O(1)` - inversed map is cached in the field
     ```
     COUNTRY_MAPPING.inverse().get(...)
     ```
