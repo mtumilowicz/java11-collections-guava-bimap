@@ -18,24 +18,24 @@ class Location {
             JAPAN, JPN
     );
 
-    private final static ImmutableBiMap<Capital, String> CAPITAL_MAPPING = ImmutableBiMap.of(
-            BUENOS_AIRES, "buenos-aires",
-            MEXICO_CITY, "mexico city",
-            WASHINGTON, "washington, dc"
-    );
-    
+    private final static ImmutableBiMap<Capital, String> CAPITAL_MAPPING = ImmutableBiMap.<Capital, String>builder()
+            .put(BUENOS_AIRES, "buenos-aires")
+            .put(MEXICO_CITY, "mexico city")
+            .put(WASHINGTON, "washington, dc")
+            .build();
+
     static Optional<Country> toDomainCountry(external.Country countryExternal) {
         return Optional.ofNullable(COUNTRY_MAPPING.get(countryExternal));
-    }    
-    
+    }
+
     static Optional<external.Country> toExternalCountry(Country countryInternal) {
         return Optional.ofNullable(COUNTRY_MAPPING.inverse().get(countryInternal));
     }
-    
+
     static Optional<Capital> toDomainCapital(String capitalExternal) {
         return Optional.ofNullable(CAPITAL_MAPPING.inverse().get(capitalExternal));
     }
-    
+
     static Optional<String> toExternalCapital(Capital capital) {
         return Optional.ofNullable(CAPITAL_MAPPING.get(capital));
     }
