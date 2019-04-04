@@ -1,11 +1,16 @@
 # java11-collections-guava-bimap
 _Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/BiMap.html  
-_Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/ImmutableBiMap.html
+_Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/ImmutableBiMap.html  
+_Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/EnumBiMap.html  
 _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
 
 # introduction
 * one to one correspondence between `X` and `Y`
 * bidirectional map between types `X` and `Y` is a bijection function `f: X -> Y`
+* guava useful classes:
+    * ImmutableBiMap
+    * EnumBiMap
+    * BiMap
 
 # usage
 1. to define `ImmutableBiMap` we have:
