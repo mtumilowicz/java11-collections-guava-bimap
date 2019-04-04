@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-collections-guava-bimap.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-collections-guava-bimap)
+
 # java11-collections-guava-bimap
 _Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/BiMap.html  
 _Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/ImmutableBiMap.html  
