@@ -39,7 +39,7 @@ We will only cover **ImmutableBiMap** (in our opinion - most useful)
     ```
     COUNTRY_MAPPING.get(...)
     ```
-1. or we can "inverse" it
+1. or we can "inverse" it in `O(1)` - it is cached in field
     ```
     COUNTRY_MAPPING.inverse().get(...)
     ```
