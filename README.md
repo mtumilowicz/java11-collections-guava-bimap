@@ -101,15 +101,27 @@ _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
         }
         ```
 * tests
-    * 
+    * toDomainCountry
         ```
+        assertThat(Optional.of(PL), is(Location.toDomainCountry(POLAND)));
+        assertThat(Optional.of(DE), is(Location.toDomainCountry(GERMANY)));
+        assertThat(Optional.of(JPN), is(Location.toDomainCountry(JAPAN)));
         ```
-    * 
+    * toExternalCountry
         ```
+        assertThat(Optional.of(POLAND), is(Location.toExternalCountry(PL)));
+        assertThat(Optional.of(GERMANY), is(Location.toExternalCountry(DE)));
+        assertThat(Optional.of(JAPAN), is(Location.toExternalCountry(JPN)));
         ```
-    * 
+    * toDomainCapital
         ```
+        assertThat(Optional.of(BUENOS_AIRES), is(Location.toDomainCapital("buenos-aires")));
+        assertThat(Optional.of(MEXICO_CITY), is(Location.toDomainCapital("mexico city")));
+        assertThat(Optional.of(WASHINGTON), is(Location.toDomainCapital("washington, dc")));
         ```
-    * 
+    * toExternalCapital
         ```
+        assertThat(Optional.of("buenos-aires"), is(Location.toExternalCapital(BUENOS_AIRES)));
+        assertThat(Optional.of("mexico city"), is(Location.toExternalCapital(MEXICO_CITY)));
+        assertThat(Optional.of("washington, dc"), is(Location.toExternalCapital(WASHINGTON)));
         ```
