@@ -80,8 +80,8 @@ We will cover only `ImmutableBiMap` (in our opinion - most useful)
             }
         }
         ```
-1. in short: we want to have one to one correspondence between incoming (ex. JSON field) `String` and our domain enum
-    1. suppose that incoming JSON field has different notation (ex. camelcase vs lowercase, "-" instead of "_", etc)
+1. in short: we want to have one to one correspondence between incoming `String` and our domain enum
+    1. suppose that incoming `String` has different notation (ex. camelcase vs lowercase, "-" instead of "_", etc)
         from used in our domain
     1. we want to establish one to one correspondence between incoming strings and our domain enum
         ```
