@@ -16,19 +16,18 @@ import static org.junit.Assert.assertThat;
 public class LocationTest {
 
     @Test
-    public void domain() {
+    public void toDomainCountry() {
         assertThat(Optional.of(PL), is(Location.toDomainCountry(POLAND)));
         assertThat(Optional.of(DE), is(Location.toDomainCountry(GERMANY)));
         assertThat(Optional.of(JPN), is(Location.toDomainCountry(JAPAN)));
     }
 
     @Test
-    public void external() {
+    public void toExternalCountry() {
         assertThat(Optional.of(POLAND), is(Location.toExternalCountry(PL)));
         assertThat(Optional.of(GERMANY), is(Location.toExternalCountry(DE)));
         assertThat(Optional.of(JAPAN), is(Location.toExternalCountry(JPN)));
     }
-
 
     @Test
     public void toDomainCapital() {
