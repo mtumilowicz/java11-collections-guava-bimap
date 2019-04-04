@@ -45,8 +45,8 @@ We will cover only `ImmutableBiMap` (in our opinion - most useful)
     ```
 
 # project description
-* in short: we want bijection between our domain objects and similar external objects
-    1. suppose we have incoming object with external for our domain `Country` class
+1. in short: we want bijection between our domain objects and similar external objects
+    1. suppose we have incoming object with external for our domain `Country` class as a field
         ```
         public enum Country {
             POLAND,
@@ -54,7 +54,7 @@ We will cover only `ImmutableBiMap` (in our opinion - most useful)
             JAPAN
         }
         ```
-    1. however in our domain, we have only abbreviations as a country
+    1. however in our domain, we have only abbreviations
         ```
         enum Country {
             PL,
@@ -80,7 +80,7 @@ We will cover only `ImmutableBiMap` (in our opinion - most useful)
             }
         }
         ```
-* in short: we want to have one to one correspondence between incoming (ex. request) String and our domain enum
+1. in short: we want to have one to one correspondence between incoming (ex. request) String and our domain enum
     1. suppose that incoming request has different notation (ex. camelcase vs lowercase, "-" instead of "_", etc)
     1. we want to establish one to one correspondence between incoming strings and our domain enum
         ```
