@@ -2,6 +2,7 @@
 _Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/BiMap.html  
 _Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/ImmutableBiMap.html  
 _Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/EnumBiMap.html  
+_Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/google/common/collect/HashBiMap.html  
 _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
 
 # introduction
@@ -10,11 +11,11 @@ _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
 * guava useful classes:
     * `ImmutableBiMap`
     * `EnumBiMap`
-    * `BiMap`
+    * `HashBiMap`
 
 # usage
 We will only cover **ImmutableBiMap** (in our opinion - most useful)
-1. to define `ImmutableBiMap` we have:
+1. to define ImmutableBiMap we have:
     * factory methods - up to 5 keys
         ```
         static <K, V> ImmutableBiMap<K, V> of(K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5)
