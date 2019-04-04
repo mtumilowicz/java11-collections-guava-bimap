@@ -46,7 +46,7 @@ We will cover only `ImmutableBiMap` (in our opinion - most useful)
 
 # project description
 * in short: we want bijection between our domain objects and similar external objects
-    1. suppose we have incoming object with external (we cannot modify it) country
+    1. suppose we have incoming object with external for our domain `Country` class
         ```
         public enum Country {
             POLAND,
