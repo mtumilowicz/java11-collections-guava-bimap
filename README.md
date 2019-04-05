@@ -8,7 +8,7 @@ _Reference_: https://google.github.io/guava/releases/27.1-jre/api/docs/com/googl
 _Reference_: https://en.wikipedia.org/wiki/Bidirectional_map
 
 # introduction
-* one to one correspondence between `X` and `Y`
+* introduces one to one correspondence between `X` and `Y`
 * bidirectional map between types `X` and `Y` is a bijection `f: X -> Y`
 * guava useful classes:
     * `ImmutableBiMap`
